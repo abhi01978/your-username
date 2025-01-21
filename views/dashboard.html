@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-6">
+  <h1 class="text-3xl font-bold mb-6">Registered Users</h1>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <% users.forEach((user) => { %>
+    <div class="bg-white p-4 rounded shadow-md">
+      <img src="<%= user.profileImage || '/default-avatar.png' %>" alt="<%= user.username %>" class="w-16 h-16 rounded-full mb-2">
+      <h2 class="text-xl font-bold"><%= user.username %></h2>
+    </div>
+    <% }) %>
+  </div>
+</body>
+</html>
